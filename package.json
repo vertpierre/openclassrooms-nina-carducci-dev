@@ -1,0 +1,29 @@
+{
+  "name": "openclassrooms-nina-carducci-dev",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build index.html --no-source-maps"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^6.0.0",
+    "@parcel/compressor-gzip": "^2.12.0",
+    "@parcel/config-default": "^2.12.0",
+    "@parcel/optimizer-terser": "^2.12.0",
+    "@parcel/packager-raw-url": "^2.12.0",
+    "@parcel/transformer-jsonld": "^2.12.0",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^7.0.1",
+    "parcel": "^2.12.0",
+    "postcss": "^8.4.38",
+    "terser": "^5.31.0"
+  },
+  "dependencies": {
+    "@mischnic/parcel-namer-preserve-structure": "^0.2.0",
+    "parcel-plugin-ogimage": "^1.2.0"
+  }
+}

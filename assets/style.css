@@ -3,7 +3,7 @@ body {
     margin: auto;
     font-family: "Inter";
     font-style: normal;
-    font-size: 16px;
+    font-size: min(16px, calc(13px + 0.2vw));
 }
 
 h1 {
@@ -26,7 +26,7 @@ h2 {
     align-items: center;
 }
 
-.nav {
+.top-header .nav {
     font-size: 14px;
 }
 
@@ -43,6 +43,7 @@ h2 {
 .nav a {
     text-decoration: none;
     color: #000;
+    white-space: nowrap;
 }
 
 .social-link img {
@@ -60,7 +61,6 @@ h2 {
 .mg-prev:focus-visible,
 .carousel-control-next:focus-visible .carousel-control-next-icon,
 .carousel-control-prev:focus-visible .carousel-control-prev-icon {
-    /* outline: 2px solid black; */
     box-shadow: 0 0 0 2px black, 0 0 0 3px white;
     border-radius: 2px;
 }
@@ -103,6 +103,7 @@ h2 {
 }
 
 .about-me-title {
+    margin-top: 2rem;
     margin-bottom: 3rem;
 }
 
@@ -124,15 +125,15 @@ h2 {
     justify-content: center;
 }
 
-.nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-    color: #fff;
-    background-color: #1c6474;
+.nav-item .nav-link {
+    color: #000;
     border-radius: 0;
+    cursor: pointer;
 }
 
-.nav-pills .nav-link {
-    color: #000;
+.nav-item .active-tag {
+    color: #fff;
+    background-color: #1c6474 !important;
 }
 
 .item-column {
@@ -153,17 +154,29 @@ h2 {
     height: 100%;
     object-fit: cover;
     padding: 0.5em;
+    cursor: pointer;
 }
 
 .mg-prev,
 .mg-next {
     width: 30px;
     height: 30px;
-    border-radius: 0;
+    border-radius: 3px;
     justify-content: center;
     align-items: center;
     display: flex;
     font-size: 24px;
+}
+
+#myAwesomeLightbox {
+    align-items: center;
+    justify-content: center;
+    max-height: 99vh;
+}
+
+.modal-dialog {
+    margin-inline: auto;
+    max-width: min(calc(94vw - 2rem), 550px);
 }
 
 .quote {
@@ -176,13 +189,12 @@ h2 {
 .quote-text {
     font-style: italic;
     font-weight: 300;
-    font-size: min(2.5rem, calc(1.4rem + 1.4vw));
+    font-size: min(2.5rem, calc(1.2rem + 1.6vw));
     max-width: 30em;
     line-height: 1.2em;
 }
 
 .quote-author {
-    font-style: normal;
     font-weight: 800;
     font-size: 22px;
 }
@@ -278,6 +290,11 @@ input[type="submit"] {
 }
 
 @media all and (max-width: 1180px) {
+    .about-me-title {
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+
     .picture {
         flex: 2;
         width: 50%;
@@ -309,8 +326,6 @@ input[type="submit"] {
     }
 
     .about-me-title {
-        margin-top: 0;
-        margin-bottom: 1em;
         text-align: center;
         margin-top: 1em;
     }
@@ -376,18 +391,20 @@ input[type="submit"] {
     .top-header .nav ul {
         width: 100%;
         padding: 0 0 0 0;
+        flex-wrap: wrap;
     }
 
     #about,
     #gallery,
     #services,
     #contact {
-        scroll-margin-top: 150px;
+        scroll-margin-top: 180px;
     }
 
     .top-header .nav li {
         flex: 1;
         padding-block: 1em;
+        padding-inline: 1em;
         text-align: center;
     }
 
